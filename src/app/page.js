@@ -1,9 +1,32 @@
 import Image from "next/image";
 import Home from "@/components/s1";
+import Edu from "@/components/s2";
+import ScholarshipPage from "@/components/s3";
+import EducationLanding from "@/components/s4";
+import ContactPage from "@/components/s5";
+import FooterComponent from "@/components/footer";
+import Navbar from "@/components/main";
 
-export default function Home() {
+export default function Home2() {
   return (
-    <Home/>
-
+    <>
+      <Navbar />
+      <div id="home">
+        <Home />
+      </div>
+      <div id="education">
+        <Edu />
+      </div>
+      <div id="scholarships">
+        <ScholarshipPage />
+      </div>
+      <div id="programs">
+        <EducationLanding />
+      </div>
+      <div id="contact">
+        <ContactPage />
+      </div>
+      <FooterComponent />
+    </>
   );
 }

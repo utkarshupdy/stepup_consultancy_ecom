@@ -20,7 +20,7 @@ export default function Home() {
             <input
               type="text"
               placeholder="What do you want to learn?"
-              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 rounded-lg border border-gray-600 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -72,14 +72,14 @@ export default function Home() {
               </svg>
             </div>
             <div>
-              <p className="font-bold text-sm">450K</p>
-              <p className="text-xs">Assisted Students</p>
+              <p className="font-bold text-sm text-black">450K</p>
+              <p className="text-xs text-gray-500">Assisted Students</p>
             </div>
           </div>
 
           <div className="absolute top-20 right-10 bg-white p-3 rounded-lg shadow-lg animate-float">
-            <p className="font-bold text-sm">User Experience Class</p>
-            <p className="text-xs mb-2">Tomorrow is our</p>
+            <p className="font-bold text-sm text-black">User Experience Class</p>
+            <p className="text-xs mb-2 text-gray-500">Tomorrow is our</p>
             <button className="bg-purple-500 text-white text-xs py-1 px-3 rounded-full">
               Join Now
             </button>
