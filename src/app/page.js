@@ -6,6 +6,8 @@ import EducationLanding from "@/components/s4";
 import ContactPage from "@/components/s5";
 import FooterComponent from "@/components/footer";
 import Navbar from "@/components/main";
+import Home3 from "@/components/s6";
+import FAQ from "@/components/s7";
 
 export default function Home2() {
   return (
@@ -23,8 +25,14 @@ export default function Home2() {
       <div id="programs">
         <EducationLanding />
       </div>
+      <div id="home3">
+        <Home3 />
+      </div>
       <div id="contact">
         <ContactPage />
+      </div>
+      <div id="faq">
+        <FAQ />
       </div>
       <FooterComponent />
     </>
