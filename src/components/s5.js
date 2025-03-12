@@ -1,5 +1,6 @@
 // / ContactPage.js
 import React from 'react';
+import Link from 'next/link';
 
 const ContactPage = () => {
   return (
@@ -14,7 +15,7 @@ const ContactPage = () => {
         <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
           <h1 className="text-5xl font-bold text-white mb-2">Contact</h1>
           <div className="text-white flex items-center space-x-2 text-sm">
-            <a href="/" className="hover:text-gray-300 transition-colors">Home</a>
+            <Link href="/" className="hover:text-gray-300 transition-colors">Home</Link>
             <span>•</span>
             <span>Contact</span>
           </div>
@@ -27,7 +28,7 @@ const ContactPage = () => {
           {/* Form Side */}
           <div className="lg:w-3/5 bg-white rounded-lg shadow-sm p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-3">Get In Touch</h2>
-            <p className="text-gray-600 mb-5 text-sm">Have a question or just want to say hi? We'd love to hear from you.</p>
+            <p className="text-gray-600 mb-5 text-sm">Have a question or just want to say hi? We&apos;d love to hear from you.</p>
             
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -88,7 +89,7 @@ const ContactPage = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">New York Office</h3>
                     <p className="text-gray-600 text-sm">
-                      Maypole Crescent 70-80 Upper St<br />
+                      Maypole Crescent 70-80 Upper St <br />
                       Norwich NR2 1LT
                     </p>
                   </div>

@@ -151,7 +151,7 @@ export default function ScholarshipPage() {
             </span>
           </h1>
           <p className="text-lg text-slate-700">
-            You don't have to struggle alone, you've got our assistance and help.
+            You don&apos;t have to struggle alone, you&apos;ve got our assistance and help.
           </p>
         </div>
 
