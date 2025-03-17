@@ -40,7 +40,7 @@ const FooterComponent = () => {
                 <svg className="h-6 w-6 text-blue-600 mr-1" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2L1 21h22L12 2zm0 5.5l7.53 13H4.47L12 7.5zm0 4.5a1 1 0 100 2 1 1 0 000-2zm0 3a1 1 0 110 2 1 1 0 010-2z" />
                 </svg>
-                <span className="text-blue-600 font-semibold text-lg">educal</span>
+                <span className="text-blue-600 font-semibold text-lg">StepUp Consultancy</span>
               </a>
             </div>
             <p className="text-gray-600 text-sm mb-4">
@@ -117,7 +117,7 @@ const FooterComponent = () => {
         {/* Copyright */}
         <div className="mt-12 pt-6 border-t border-gray-200 text-center text-gray-600 text-sm">
           © 2023 Educal, All Rights Reserved. Design By 
-          <a href="#" className="text-blue-600 hover:underline ml-1">Theme Pure</a>
+          <a href="#" className="text-blue-600 hover:underline ml-1">StepUp Consultancy</a>
         </div>
       </div>
       

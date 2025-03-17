@@ -107,8 +107,8 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Email us directly</h3>
-                    <p className="text-gray-600 text-sm mb-1">support@educal.com</p>
-                    <p className="text-gray-600 text-sm">info@educal.com</p>
+                    <p className="text-gray-600 text-sm mb-1">support@stepupconsultancy.com</p>
+                    <p className="text-gray-600 text-sm">info@stepupconsultancy.com</p>
                   </div>
                 </div>
               </div>

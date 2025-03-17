@@ -55,39 +55,56 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group">
-              {/* Modern "E" Logo SVG */}
+              {/* Enhanced StepUp Consultancy Logo SVG */}
               <div className={`relative transition-transform duration-500 transform group-hover:scale-110 ${
                 scrolled ? '' : 'hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]'
               }`}>
-                <svg width="45" height="45" viewBox="0 0 100 100" className="fill-current">
-                  {/* Base shape - gradient background */}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="120" height="40">
+                  {/* Modern Gradient Background */}
                   <defs>
                     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#4F46E5" />
-                      <stop offset="100%" stopColor="#06B6D4" />
+                      <stop offset="0%" stopColor="#0A2463" />
+                      <stop offset="50%" stopColor="#247BA0" />
+                      <stop offset="100%" stopColor="#1E88E5" />
                     </linearGradient>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="2" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
                   </defs>
                   
-                  {/* Main rounded square with gradient */}
-                  <rect width="100" height="100" rx="20" fill="url(#logoGradient)" />
-                  
-                  {/* Stylized "E" with cutouts */}
-                  <path d="M20 20H80V35H35V42.5H70V57.5H35V65H80V80H20V20Z" fill="white" />
-                  
-                  {/* Accent circle */}
-                  <circle cx="75" cy="25" r="8" fill="#FFD700" />
+                  {/* Main Logo Group */}
+                  <g>
+                    {/* Stepped Arrow Elements */}
+                    <g transform="translate(10, 40)">
+                      <rect x="0" y="0" width="30" height="10" rx="2" fill="#0A2463" />
+                      <rect x="32" y="-10" width="30" height="10" rx="2" fill="#247BA0" />
+                      <rect x="64" y="-20" width="30" height="10" rx="2" fill="#1E88E5" />
+                      <rect x="96" y="-30" width="30" height="10" rx="2" fill="#42A5F5" />
+                      
+                      {/* Dynamic Arrow */}
+                      <path d="M130,-25 L140,-25 L135,-15 Z" fill="#42A5F5" />
+                    </g>
+                    
+                    {/* Animated Figure */}
+                    <g transform="translate(55, 25)">
+                      <circle cx="0" cy="0" r="5" fill="#0A2463" />
+                      <path d="M0,5 L0,15 M-7,10 L7,10 M0,15 L-5,25 M0,15 L5,25" 
+                        stroke="#0A2463" strokeWidth="2" fill="none" />
+                    </g>
+                    
+                    {/* Text Elements */}
+                    <g transform="translate(150, 37)">
+                      <text x="0" y="0" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="bold" fill="url(#logoGradient)" filter="url(#glow)">STEPUP</text>
+                      <text x="0" y="14" fontFamily="Arial, sans-serif" fontSize="8" letterSpacing="1" fill="#247BA0">CONSULTANCY</text>
+                    </g>
+                  </g>
                 </svg>
               </div>
-              
-              {/* <span className={`ml-3 font-bold text-xl tracking-tight transition-colors duration-300 ${
-                scrolled ? 'text-gray-800' : 'text-white'
-              }`}>
-                EduPortal
-              </span> */}
             </Link>
           </div>
 
-          {/* Desktop Navigation - Enhanced */}
+          {/* Desktop Navigation - Enhanced with GRAY colors instead of white */}
           <div className="hidden md:flex md:items-center md:space-x-1">
             {['home', 'education', 'scholarships', 'programs'].map((section) => (
               <button 
@@ -95,8 +112,8 @@ const Navbar = () => {
                 onClick={() => scrollToSection(section)} 
                 className={`px-4 py-2 mx-1 rounded-full font-medium transition-all duration-300 relative ${
                   activeSection === section
-                    ? (scrolled ? 'text-blue-600' : 'text-white font-semibold')
-                    : (scrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white')
+                    ? (scrolled ? 'text-blue-600' : 'text-black font-semibold')
+                    : (scrolled ? 'text-black hover:text-blue-600' : 'text-black/60 hover:text-black/80')
                 }`}
               >
                 <span className="relative z-10 capitalize">
@@ -104,7 +121,7 @@ const Navbar = () => {
                 </span>
                 {activeSection === section && (
                   <span className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                    scrolled ? 'bg-blue-100/80' : 'bg-white/20'
+                    scrolled ? 'bg-blue-100/80' : 'bg-gray-300/30'
                   }`}></span>
                 )}
               </button>
@@ -121,14 +138,14 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button - Enhanced */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               type="button"
               className={`inline-flex items-center justify-center p-2 rounded-full ${
                 scrolled 
                   ? 'text-gray-700 hover:bg-gray-100' 
-                  : 'text-white hover:bg-white/20'
+                  : 'text-gray-200 hover:bg-gray-700/20'
               } transition-all duration-300`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -146,7 +163,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu - Enhanced with animations */}
+      {/* Mobile Menu */}
       <div 
         className={`md:hidden fixed inset-0 bg-gradient-to-b from-blue-600 to-blue-900 z-40 transition-all duration-300 transform ${
           mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
@@ -159,7 +176,7 @@ const Navbar = () => {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`w-full text-left px-5 py-4 text-white text-xl font-medium hover:bg-white/10 rounded-xl transition-all duration-300 transform ${
+                className={`w-full text-left px-5 py-4 text-purple-800 text-xl font-medium hover:bg-white/10 rounded-xl transition-all duration-300 transform ${
                   mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
                 }`}
                 style={{ 
@@ -178,7 +195,7 @@ const Navbar = () => {
               {[
                 { icon: 'M18.6668 6.67334C18.0002 7.00001 17.3468 7.13268 16.6668 7.33334C15.9195 6.49001 14.8115 6.44334 13.7468 6.84201C12.6822 7.24068 11.9848 8.21534 12.0002 9.33334V10C9.83683 10.0553 7.91016 9.07001 6.66683 7.33334C6.66683 7.33334 3.87883 12.2887 9.3335 14.6667C8.0855 15.498 6.84083 16.0587 5.3335 16C7.53883 17.202 9.94216 17.6153 12.0228 17.0113C14.4095 16.318 16.3708 14.5293 17.1235 11.85C17.348 11.0351 17.4595 10.1932 17.4548 9.34801C17.4535 9.18201 18.4615 7.50001 18.6668 6.67268V6.67334Z'}, 
                 { icon: 'M21.5 6.5H4.5C3.4 6.5 2.5 7.4 2.5 8.5V15.5C2.5 16.6 3.4 17.5 4.5 17.5H21.5C22.6 17.5 23.5 16.6 23.5 15.5V8.5C23.5 7.4 22.6 6.5 21.5 6.5ZM21.5 15.5H4.5V8.5H21.5V15.5ZM13 11.5C13 12.6 12.1 13.5 11 13.5H8.5V9.5H11C12.1 9.5 13 10.4 13 11.5ZM11 11.5H10V12.5H11V11.5ZM11 9.5H10V10.5H11V9.5ZM17 11.5C17 12.6 16.1 13.5 15 13.5H14C12.9 13.5 12 12.6 12 11.5C12 10.4 12.9 9.5 14 9.5H15C16.1 9.5 17 10.4 17 11.5ZM15 11.5H14V12.5H15V11.5ZM15 9.5H14V10.5H15V9.5Z'} ,
-                { icon: 'M16.5 12.5H13.5V15.5C13.5 16.1 13 16.5 12.5 16.5H11.5C10.9 16.5 10.5 16.1 10.5 15.5V12.5H7.5C6.9 12.5 6.5 12 6.5 11.5V10.5C6.5 9.9 6.9 9.5 7.5 9.5H10.5V6.5C10.5 5.9 10.9 5.5 11.5 5.5H12.5C13 5.5 13.5 5.9 13.5 6.5V9.5H16.5C17.1 9.5 17.5 9.9 17.5 10.5V11.5C17.5 12 17.1 12.5 16.5 12.5Z' } // Facebook
+                { icon: 'M16.5 12.5H13.5V15.5C13.5 16.1 13 16.5 12.5 16.5H11.5C10.9 16.5 10.5 16.1 10.5 15.5V12.5H7.5C6.9 12.5 6.5 12 6.5 11.5V10.5C6.5 9.9 6.9 9.5 7.5 9.5H10.5V6.5C10.5 5.9 10.9 5.5 11.5 5.5H12.5C13 5.5 13.5 5.9 13.5 6.5V9.5H16.5C17.1 9.5 17.5 9.9 17.5 10.5V11.5C17.5 12 17.1 12.5 16.5 12.5Z' }
               ].map((social, index) => (
                 <a
                   key={index}
