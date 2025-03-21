@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function Edu() {
   // SVG icon components
   const icons = {
-    uxui: (
+    uiux: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" className="w-12 h-12">
         <circle cx="32" cy="22" r="18" fill="#FFD580" />
         <g fill="#3b82f6">
