@@ -1,7 +1,8 @@
 // pages/index.js
 "use client"
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Edu() {
   // SVG icon components
@@ -86,94 +87,170 @@ export default function Edu() {
     ),
   };
 
-  // Category card component
-  function CategoryCard({ title, icon }) {
+  // Animation variants for staggered children
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    show: { 
+      y: 0, 
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
+  // Hero text animation
+  const titleVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  // Category card component with animations inspired by FeatureCard
+  function CategoryCard({ title, icon, index }) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-      <div 
-        className={`bg-slate-50 p-8 rounded-lg text-center transition-colors duration-300 cursor-pointer ${isHovered ? 'bg-slate-200' : ''}`}
+      <motion.div 
+        variants={item}
+        className={`bg-slate-50 p-8 rounded-lg text-center transition-all duration-300 cursor-pointer relative overflow-hidden 
+          ${isHovered ? 'shadow-lg bg-slate-100 transform -translate-y-2' : 'shadow-md'}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="flex justify-center items-center mb-4">
-          {icon}
+        {/* Number indicator similar to FeatureCard */}
+        <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+          
         </div>
+        
+        <motion.div 
+          className="flex justify-center items-center mb-4"
+          animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          {icon}
+        </motion.div>
         <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-      </div>
+        
+        {/* Bottom blue line animation like in FeatureCard */}
+        <motion.div 
+          className="absolute bottom-0 left-0 h-1 bg-blue-600"
+          initial={{ width: 0 }}
+          animate={{ width: isHovered ? '100%' : 0 }}
+          transition={{ duration: 0.3 }}
+        />
+      </motion.div>
     );
   }
 
   return (
-    <div className=" bg-white font-sans">
+    <div className="bg-white font-sans">
       <Head>
         <title>Education And Teaching Courses</title>
         <meta name="description" content="Education courses for the next generation" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="py-16 ">
+      <main className="py-16">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Left Content */}
-          <div className="w-full md:w-5/12 text-left md:pr-12">
-            <span className="text-blue-500 m-5 font-semibold text-base pb-1 border-b-2 border-blue-500">
+          {/* Left Content with animations */}
+          <motion.div 
+            className="w-full md:w-5/12 text-left md:pr-12"
+            initial="hidden"
+            animate="visible"
+            variants={titleVariants}
+          >
+            <motion.span 
+              className="text-blue-500 m-5 font-semibold text-base pb-1 border-b-2 border-blue-500 inline-block"
+              initial={{ width: 0 }}
+              animate={{ width: "auto" }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
               Top Category
-            </span>
+            </motion.span>
             
-            <h1 className="mt-6 text-5xl font-extrabold m-5 text-slate-900 leading-tight">
+            <motion.h1 
+              className="mt-6 text-5xl font-extrabold m-5 text-slate-900 leading-tight"
+              variants={titleVariants}
+            >
               Education And<br />
               Teaching Courses<br />
-              Next Generation
-            </h1>
+              <motion.span
+                className="text-blue-600"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
+                Next Generation
+              </motion.span>
+            </motion.h1>
             
-            <p className="mt-6 text-lg text-slate-600 m-5 leading-relaxed">
+            <motion.p 
+              className="mt-6 text-lg text-slate-600 m-5 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
               Education is a vital process that fosters personal <br /> growth,
               societal development, and intellectual advancement.
-            </p>
-          </div>
+            </motion.p>
 
-          {/* Right Grid */}
-          <div className="w-full md:w-7/12 bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <CategoryCard 
-              title="UX/UI Design"
-              icon={icons.uxui}
-            />
-            <CategoryCard 
-              title="Business Finance"
-              icon={icons.finance}
-            />
-            <CategoryCard 
-              title="SEO & Marketing"
-              icon={icons.seo}
-            />
-            <CategoryCard 
-              title="Health & Medical"
-              icon={icons.health}
-            />
-            <CategoryCard 
-              title="Computer Science"
-              icon={icons.computer}
-            />
-            <CategoryCard 
-              title="Insurance & Bank"
-              icon={icons.insurance}
-            />
-            <CategoryCard 
-              title="Video & Audio"
-              icon={icons.video}
-            />
-            <CategoryCard 
-              title="Development"
-              icon={icons.development}
-            />
-            <CategoryCard 
-              title="Art & Fashion"
-              icon={icons.art}
-            />
-          </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.5 }}
+            >
+              <a 
+                href="#explore" 
+                className="inline-flex items-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition-all duration-300 hover:shadow-lg m-5"
+              >
+                Explore Courses
+                <svg 
+                  className="ml-2 w-5 h-5" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Grid with staggered animation */}
+          <motion.div 
+            className="w-full md:w-7/12 bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            {Object.entries(icons).map(([key, icon], index) => (
+              <CategoryCard 
+                key={key}
+                title={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1').trim()}
+                icon={icon}
+                index={index}
+              />
+            ))}
+          </motion.div>
         </div>
       </main>
     </div>
   );
 }
-
