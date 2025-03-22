@@ -1,6 +1,6 @@
 // pages/index.js
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 export default function ScholarshipPage() {
@@ -62,47 +62,67 @@ export default function ScholarshipPage() {
     }
   ];
 
-  // University logos
+  // University logos with animation attributes
   const universityLogos = [
-    <svg key="uni1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" />
-      <path d="M30 65l40-30M30 35l40 30" stroke="#20374c" strokeWidth="3" />
-      <path d="M50 25v50" stroke="#20374c" strokeWidth="3" />
-      <path d="M25 50h50" stroke="#20374c" strokeWidth="3" />
-      <path d="M38 35l12-10 12 10" fill="#c12e34" />
-      <path d="M38 65l12 10 12-10" fill="#c12e34" />
+    <svg key="uni1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20 logo-animation">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" className="animate-stroke" />
+      <path d="M30 65l40-30M30 35l40 30" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <path d="M50 25v50" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <path d="M25 50h50" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <path d="M38 35l12-10 12 10" fill="#c12e34" className="animate-fill" />
+      <path d="M38 65l12 10 12-10" fill="#c12e34" className="animate-fill" />
     </svg>,
-    <svg key="uni2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" />
-      <path d="M30 30h40v40H30z" fill="none" stroke="#20374c" strokeWidth="3" />
-      <circle cx="50" cy="50" r="15" fill="none" stroke="#20374c" strokeWidth="2" />
-      <path d="M50 25v10M50 65v10M25 50h10M65 50h10" stroke="#20374c" strokeWidth="3" />
-      <path d="M35 35l30 30" stroke="#c12e34" strokeWidth="3" />
+    <svg key="uni2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20 logo-animation">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" className="animate-stroke" />
+      <path d="M30 30h40v40H30z" fill="none" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <circle cx="50" cy="50" r="15" fill="none" stroke="#20374c" strokeWidth="2" className="animate-stroke" />
+      <path d="M50 25v10M50 65v10M25 50h10M65 50h10" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <path d="M35 35l30 30" stroke="#c12e34" strokeWidth="3" className="animate-path-draw-accent" />
     </svg>,
-    <svg key="uni3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" />
-      <path d="M35 40l15-15 15 15v30H35V40z" fill="none" stroke="#20374c" strokeWidth="3" />
-      <path d="M44 50a6 6 0 0112 0v20" stroke="#c12e34" strokeWidth="3" fill="none" />
+    <svg key="uni3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20 logo-animation">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" className="animate-stroke" />
+      <path d="M35 40l15-15 15 15v30H35V40z" fill="none" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <path d="M44 50a6 6 0 0112 0v20" stroke="#c12e34" strokeWidth="3" fill="none" className="animate-path-draw-accent" />
     </svg>,
-    <svg key="uni4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" />
-      <path d="M30 30h40v40H30z" fill="none" stroke="#20374c" strokeWidth="3" />
-      <path d="M30 50h40M50 30v40" stroke="#20374c" strokeWidth="2" />
-      <path d="M35 35l30 30M35 65l30-30" stroke="#c12e34" strokeWidth="3" />
+    <svg key="uni4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20 logo-animation">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" className="animate-stroke" />
+      <path d="M30 30h40v40H30z" fill="none" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <path d="M30 50h40M50 30v40" stroke="#20374c" strokeWidth="2" className="animate-path-draw" />
+      <path d="M35 35l30 30M35 65l30-30" stroke="#c12e34" strokeWidth="3" className="animate-path-draw-accent" />
     </svg>,
-    <svg key="uni5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" />
-      <circle cx="50" cy="50" r="25" fill="none" stroke="#20374c" strokeWidth="3" />
-      <path d="M50 25v50" stroke="#20374c" strokeWidth="3" />
-      <path d="M50 25l-15 25h30L50 25z" fill="#c12e34" />
+    <svg key="uni5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20 logo-animation">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" className="animate-stroke" />
+      <circle cx="50" cy="50" r="25" fill="none" stroke="#20374c" strokeWidth="3" className="animate-stroke" />
+      <path d="M50 25v50" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <path d="M50 25l-15 25h30L50 25z" fill="#c12e34" className="animate-fill" />
     </svg>,
-    <svg key="uni6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" />
-      <path d="M35 35h30v30H35z" fill="none" stroke="#20374c" strokeWidth="3" />
-      <circle cx="50" cy="50" r="10" fill="#c12e34" />
-      <path d="M30 30l40 40M30 70l40-40" stroke="#20374c" strokeWidth="2" />
+    <svg key="uni6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20 logo-animation">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#20374c" strokeWidth="2" className="animate-stroke" />
+      <path d="M35 35h30v30H35z" fill="none" stroke="#20374c" strokeWidth="3" className="animate-path-draw" />
+      <circle cx="50" cy="50" r="10" fill="#c12e34" className="animate-fill" />
+      <path d="M30 30l40 40M30 70l40-40" stroke="#20374c" strokeWidth="2" className="animate-path-draw" />
     </svg>
   ];
+
+  // Animation visibility control
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const partnersSection = document.getElementById('partners-section');
+      if (partnersSection) {
+        const rect = partnersSection.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight * 0.75;
+        setIsVisible(isInView);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    // Initial check
+    setTimeout(handleScroll, 100);
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Feature card component with hover effect
   function FeatureCard({ data }) {
@@ -130,6 +150,102 @@ export default function ScholarshipPage() {
         <meta name="description" content="Scholarship program details" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <style jsx global>{`
+        /* Animation keyframes */
+        @keyframes float {
+          0% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-10px) rotate(2deg); }
+          100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        @keyframes pulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+          100% { transform: scale(1); }
+        }
+        
+        @keyframes strokeDraw {
+          to { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes fillIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        
+        /* Apply animations to elements */
+        .logo-animation {
+          animation: float 6s ease-in-out infinite;
+          transition: all 0.3s ease;
+        }
+        
+        .logo-animation:hover {
+          transform: scale(1.1);
+        }
+        
+        .animate-stroke {
+          stroke-dasharray: 250;
+          stroke-dashoffset: 250;
+          animation: strokeDraw 2s forwards;
+          animation-delay: calc(var(--index, 0) * 0.2s);
+        }
+        
+        .animate-path-draw {
+          stroke-dasharray: 150;
+          stroke-dashoffset: 150;
+          animation: strokeDraw 1.5s forwards;
+          animation-delay: calc(var(--index, 0) * 0.2s + 0.5s);
+        }
+        
+        .animate-path-draw-accent {
+          stroke-dasharray: 150;
+          stroke-dashoffset: 150;
+          animation: strokeDraw 1.5s forwards;
+          animation-delay: calc(var(--index, 0) * 0.2s + 1s);
+        }
+        
+        .animate-fill {
+          opacity: 0;
+          animation: fillIn 1s forwards;
+          animation-delay: calc(var(--index, 0) * 0.2s + 1.5s);
+        }
+        
+        .partners-visible .logo-animation:nth-child(1) {
+          animation-delay: 0.1s;
+          --index: 1;
+        }
+        
+        .partners-visible .logo-animation:nth-child(2) {
+          animation-delay: 0.2s;
+          --index: 2;
+        }
+        
+        .partners-visible .logo-animation:nth-child(3) {
+          animation-delay: 0.3s;
+          --index: 3;
+        }
+        
+        .partners-visible .logo-animation:nth-child(4) {
+          animation-delay: 0.4s;
+          --index: 4;
+        }
+        
+        .partners-visible .logo-animation:nth-child(5) {
+          animation-delay: 0.5s;
+          --index: 5;
+        }
+        
+        .partners-visible .logo-animation:nth-child(6) {
+          animation-delay: 0.6s;
+          --index: 6;
+        }
+      `}</style>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Header Section with orange underline */}
@@ -163,7 +279,10 @@ export default function ScholarshipPage() {
         </div>
 
         {/* Partners Section */}
-        <div className="bg-gray-200 rounded-xl p-8 md:p-12 shadow-md">
+        <div 
+          id="partners-section" 
+          className={`bg-gray-200 rounded-xl p-8 md:p-12 shadow-md transition-all duration-1000 ${isVisible ? 'partners-visible' : 'opacity-90'}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-900 tracking-tight">
             <span className="relative inline-block">
               25m+ Trusted Partners
@@ -178,7 +297,11 @@ export default function ScholarshipPage() {
           {/* University Logos */}
           <div className="grid grid-cols-3 md:grid-cols-6 gap-8 justify-items-center">
             {universityLogos.map((logo, index) => (
-              <div key={index} className="flex items-center justify-center">
+              <div 
+                key={index} 
+                className={`flex items-center justify-center transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
                 {logo}
               </div>
             ))}

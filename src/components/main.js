@@ -54,55 +54,23 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center group">
-              {/* Enhanced StepUp Consultancy Logo SVG */}
-              <div className={`relative transition-transform duration-500 transform group-hover:scale-110 ${
-                scrolled ? '' : 'hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]'
-              }`}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="120" height="40">
-                  {/* Modern Gradient Background */}
-                  <defs>
-                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#0A2463" />
-                      <stop offset="50%" stopColor="#247BA0" />
-                      <stop offset="100%" stopColor="#1E88E5" />
-                    </linearGradient>
-                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="2" result="blur" />
-                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                  </defs>
-                  
-                  {/* Main Logo Group */}
-                  <g>
-                    {/* Stepped Arrow Elements */}
-                    <g transform="translate(10, 40)">
-                      <rect x="0" y="0" width="30" height="10" rx="2" fill="#0A2463" />
-                      <rect x="32" y="-10" width="30" height="10" rx="2" fill="#247BA0" />
-                      <rect x="64" y="-20" width="30" height="10" rx="2" fill="#1E88E5" />
-                      <rect x="96" y="-30" width="30" height="10" rx="2" fill="#42A5F5" />
-                      
-                      {/* Dynamic Arrow */}
-                      <path d="M130,-25 L140,-25 L135,-15 Z" fill="#42A5F5" />
-                    </g>
-                    
-                    {/* Animated Figure */}
-                    <g transform="translate(55, 25)">
-                      <circle cx="0" cy="0" r="5" fill="#0A2463" />
-                      <path d="M0,5 L0,15 M-7,10 L7,10 M0,15 L-5,25 M0,15 L5,25" 
-                        stroke="#0A2463" strokeWidth="2" fill="none" />
-                    </g>
-                    
-                    {/* Text Elements */}
-                    <g transform="translate(150, 37)">
-                      <text x="0" y="0" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="bold" fill="url(#logoGradient)" filter="url(#glow)">STEPUP</text>
-                      <text x="0" y="14" fontFamily="Arial, sans-serif" fontSize="8" letterSpacing="1" fill="#247BA0">CONSULTANCY</text>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </Link>
-          </div>
+  <Link href="/" className="flex items-center group">
+    {/* Logo from public/blue.svg */}
+    <div
+      className={`relative transition-transform duration-500 transform group-hover:scale-110 ${
+        scrolled ? "" : "hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+      }`}
+    >
+      <img 
+        src="/blue.svg" 
+        alt="StepUp Consultancy Logo" 
+        width={120} 
+        height={40} 
+      />
+    </div>
+  </Link>
+</div>
+
 
           {/* Desktop Navigation - Enhanced with GRAY colors instead of white */}
           <div className="hidden md:flex md:items-center md:space-x-1">
