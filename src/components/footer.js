@@ -45,7 +45,7 @@ const FooterComponent = () => {
             </div>
             <h2 className="text-gray-600 text-sm font-bold mb-4">We Listen to Your Dreams, Like a Friend</h2>
             <p className="text-gray-600 text-sm mb-4">
-            At Stepup Consultancy, we're your dedicated guides for all things education. If you're considering further studies, whether in India or internationally, we provide you with all the essential information.
+            At Stepup Consultancy, we&apos;re your dedicated guides for all things education. If you&apos;re considering further studies, whether in India or internationally, we provide you with all the essential information.
             </p>
             <div className="flex space-x-2">
               <a href="#" className="bg-blue-800 text-white p-2 rounded hover:bg-gray-600 transition-colors duration-300">

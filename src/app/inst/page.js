@@ -159,7 +159,7 @@ function EducationCounselingPage() {
 
           {/* Quote Section */}
           <div className="mt-12 border-l-4 border-blue-500 pl-4 italic text-gray-600">
-            "Guiding you beyond borders, towards limitless possibilities."
+          &quot;Guiding you beyond borders, towards limitless possibilities.&quot;
           </div>
         </motion.div>
       </div>
