@@ -9,22 +9,22 @@ const FooterComponent = () => {
       <div className="max-w-6xl mx-auto mb-12">
         <div className="bg-blue-600 rounded-lg shadow-lg p-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-white mb-6 md:mb-0">
-            <h2 className="text-3xl font-bold mb-1">Start learning by</h2>
-            <h2 className="text-3xl font-bold">Downloading Apps.</h2>
+            <h2 className="text-3xl font-bold mb-1">Lets setup your </h2>
+            <h2 className="text-3xl font-bold">Carrier to Next Level.</h2>
           </div>
           <div className="flex gap-3">
             <a href="#" className="bg-white text-gray-800 hover:bg-gray-200 transition-colors duration-300 rounded-md py-2 px-4 flex items-center">
-              <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+              {/* <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.5275 12.5133C17.5005 9.67332 19.9825 8.40332 20.0705 8.35332C18.6795 6.27332 16.5235 6.00332 15.7615 5.98332C13.9355 5.79332 12.1705 7.09332 11.2425 7.09332C10.2955 7.09332 8.86849 5.99832 7.33349 6.02332C5.35349 6.04832 3.52549 7.17332 2.52649 8.89832C0.477487 12.4133 2.03349 17.6133 3.99849 20.4133C4.97849 21.7823 6.13149 23.3323 7.63649 23.2813C9.10649 23.2263 9.66749 22.3423 11.4315 22.3423C13.1795 22.3423 13.7075 23.2813 15.2435 23.2483C16.8235 23.2263 17.8225 21.8623 18.7695 20.4803C19.9135 18.8923 20.3695 17.3293 20.3895 17.2483C20.3485 17.2373 17.5585 16.1103 17.5275 12.5133Z" />
                 <path d="M14.9385 3.76001C15.7145 2.79001 16.2265 1.47701 16.0725 0.150009C14.9415 0.194009 13.5335 0.910009 12.7225 1.85301C11.9985 2.68601 11.3805 4.03001 11.5535 5.31701C12.8275 5.40401 14.1305 4.71701 14.9385 3.76001Z" />
-              </svg>
-              Apple Store
+              </svg> */}
+              Browse Courses
             </a>
             <a href="#" className="bg-white text-gray-800 hover:bg-gray-200 transition-colors duration-300 rounded-md py-2 px-4 flex items-center">
               <svg className="w-4 h-4 mr-2" viewBox="0 0 512 512" fill="currentColor">
                 <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
               </svg>
-              Play Store
+              Contact Us
             </a>
           </div>
         </div>
@@ -43,8 +43,9 @@ const FooterComponent = () => {
                 <span className="text-blue-600 font-semibold text-lg">StepUp Consultancy</span>
               </a>
             </div>
+            <h2 className="text-gray-600 text-sm font-bold mb-4">We Listen to Your Dreams, Like a Friend</h2>
             <p className="text-gray-600 text-sm mb-4">
-              Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson plans to best.
+            At Stepup Consultancy, we're your dedicated guides for all things education. If you're considering further studies, whether in India or internationally, we provide you with all the essential information.
             </p>
             <div className="flex space-x-2">
               <a href="#" className="bg-blue-800 text-white p-2 rounded hover:bg-gray-600 transition-colors duration-300">
@@ -67,33 +68,46 @@ const FooterComponent = () => {
           
           {/* Company Links */}
           <div className="col-span-1">
-            <h3 className="font-semibold text-gray-800 mb-4">Company</h3>
+            <h3 className="font-semibold text-gray-800 mb-4">Top Courses</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">About</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Courses</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Events</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Instructor</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Career</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Become a Teacher</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contact</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">MBA, MSc, M. Tech</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">BBA, B.Com, BSC, BCA</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Computer Science</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Management</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Law & Architecture</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Science and Humanities</a></li>
+              {/* <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300"></a></li> */}
             </ul>
           </div>
           
           {/* Platform Links */}
           <div className="col-span-1">
-            <h3 className="font-semibold text-gray-800 mb-4">Platform</h3>
+            <h3 className="font-semibold text-gray-800 mb-4">Top Medical Courses</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Browse Library</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Library</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Partners</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">News & Blogs</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Dental</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Pharmacy</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Nursing MBBS</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">B.Sc (Cardiac/optimetry)</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">B.Sc (renal dialysis / anesthesia)</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Physiotherapy (BPT)</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Allied Health and Science</a></li>
+            </ul>
+          </div>
+          {/* Platform Links */}
+          <div className="col-span-1">
+            <h3 className="font-semibold text-gray-800 mb-4">Other Courses</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">About Us</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contact Page</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Study Abroad</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Our Services</a></li>
               <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">FAQs</a></li>
               <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-300">Tutorials</a></li>
             </ul>
           </div>
           
           {/* Subscribe */}
-          <div className="col-span-1">
+          <div className="col-span-1 align-middle align-item-center">
             <h3 className="font-semibold text-gray-800 mb-4">Subscribe</h3>
             <div className="flex mb-3">
               <input 

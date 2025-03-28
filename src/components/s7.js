@@ -10,23 +10,23 @@ export default function FAQ() {
   const faqItems = [
     { 
       id: 0, 
-      title: 'Development & Design', 
-      content: 'Our platform offers comprehensive courses in development and design, covering everything from web development to UX/UI design principles. Learn from industry experts who provide practical insights alongside theoretical knowledge.'
+      title: 'PTE', 
+      content: 'The Pearson Test of English Academic (PTE) is a computer-based test that some universities require from students who wish to study abroad but do not speak English.'
     },
     { 
       id: 1, 
-      title: 'Start With Mentors', 
-      content: 'Every student gets paired with an experienced mentor who provides personalized guidance throughout your learning journey. Our mentors are professionals with years of industry experience ready to help you succeed.'
+      title: 'GRE', 
+      content: 'Graduate Record Examinations (GRE) will test your reasoning and writing, and thinking skills. This is the prominent test, and its results are required by most universities abroad.'
     },
     { 
       id: 2, 
-      title: 'The Best Way to Boost Your Skills', 
-      content: 'Through project-based learning and hands-on exercises, you will develop practical skills that employers are looking for. Our curriculum is designed to help you build a portfolio while you learn.'
+      title: 'TOEFL', 
+      content: 'Test of English as a Foreign Language (TOEFL) will test your English abilities. This is the most popular test, and its results are required by many universities in the world.'
     },
     { 
       id: 3, 
-      title: 'What Can I Do to Help?', 
-      content: 'You can contribute to our community by sharing your knowledge, participating in forums, or even becoming a mentor yourself once you have mastered your skills. We believe in the power of collaborative learning.'
+      title: 'IELTS', 
+      content: 'International English Language Testing System (IELTS) is the most popular English language test that assesses and proves your English Language ability.'
     }
   ];
   
@@ -37,7 +37,7 @@ export default function FAQ() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50">
       <Head>
-        <title>FAQ - Education Platform</title>
+        <title>Exam Preparation Guidance</title>
         <meta name="description" content="Frequently asked questions about our education platform" />
       </Head>
       
