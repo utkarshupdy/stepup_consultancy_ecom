@@ -8,41 +8,46 @@ const FeatureCard = ({ icon, title, description, index }) => {
   
   return (
     <div 
-      className={`relative bg-white rounded-xl p-6 shadow-lg transition-all duration-300 ${
-        isHovered ? 'shadow-xl transform -translate-y-2 border-b-4 border-blue-600' : ''
-      }`}
+      className="relative bg-white rounded-xl p-6 shadow-lg transition-all duration-300 overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Animated background overlay that transitions from top to bottom */}
+      <div 
+        className={`absolute inset-0 bg-blue-600 origin-top scale-y-0 transition-transform duration-500 ease-out z-0 ${
+          isHovered ? 'scale-y-100' : ''
+        }`}
+      ></div>
+      
       {/* Number indicator */}
-      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shadow-md">
-        {index + 1}
+      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shadow-md z-10">
+        
       </div>
       
       {/* Icon wrapper */}
-      <div className="mb-4 flex items-center">
-        <div className={`w-14 h-14 rounded-lg p-3 ${
-          isHovered ? 'bg-blue-600' : 'bg-blue-100'
-        } transition-colors duration-300 mr-3`}>
-          <Image
-            src={icon}
-            alt={title}
-            width={32}
-            height={32}
-            className={`w-8 h-8 transition-all duration-300 ${
-              isHovered ? 'filter brightness-0 invert' : ''
-            }`}
-          />
-        </div>
-        <h3 className="text-xl font-bold text-gray-800">{title}</h3>
-      </div>
+      {/* Icon wrapper */}
+<div className="mb-4 flex items-center relative z-10">
+  <div className={`w-14 h-14 rounded-lg p-3 transition-colors duration-300 mr-3 ${
+    isHovered ? 'bg-white' : 'bg-blue-100'
+  }`}>
+    <Image
+      src={icon}
+      alt={title}
+      width={32}
+      height={32}
+      className={`w-8 h-8 transition-all duration-300 ${
+        isHovered ? 'filter invert-0' : ''
+      }`}
+    />
+  </div>
+  <h3 className={`text-xl font-bold transition-colors duration-300 ${
+    isHovered ? 'text-white' : 'text-gray-800'
+  }`}>{title}</h3>
+</div>
       
-      <p className="text-gray-600 mt-2">{description}</p>
-      
-      {/* Hover indicator */}
-      {isHovered && (
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 rounded-b-xl"></div>
-      )}
+      <p className={`mt-2 transition-colors duration-500 relative z-10 ${
+        isHovered ? 'text-white' : 'text-gray-600'
+      }`}>{description}</p>
     </div>
   );
 };

@@ -34,7 +34,7 @@ export default function Home2() {
       <div id="faq">
         <FAQ />
       </div>
-      <FooterComponent />
+      {/* <FooterComponent /> */}
     </>
   );
 }

@@ -152,7 +152,10 @@ import {
   Target,
   Calendar,
   ChevronDown,
-  ChevronUp 
+  ChevronUp, 
+  Currency,
+  Book,
+  PersonStanding
 } from 'lucide-react';
 
 export default function StudyAbroadPage() {
@@ -165,7 +168,7 @@ export default function StudyAbroadPage() {
         { icon: Globe, text: 'Diverse Cultural Experience' },
         { icon: BookOpen, text: 'Cutting-Edge Research' }
       ],
-      image: 'https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Use local image
+      image: 'https://images.pexels.com/photos/2606537/pexels-photo-2606537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       processContent: `At Stepup Consultancy, we believe that applying to study in the United States should be a straightforward and empowering experience. Our team of seasoned education consultants is here to guide you through every stage of the process.`
     },
     {
@@ -175,20 +178,81 @@ export default function StudyAbroadPage() {
         { icon: Globe, text: 'Multicultural Environment' },
         { icon: BookOpen, text: 'Innovation-Driven Education' }
       ],
-      image: 'https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Use local image
+      image: 'https://images.pexels.com/photos/29334626/pexels-photo-29334626/free-photo-of-trump-tower-chicago-at-twilight.jpeg?auto=compress&cs=tinysrgb&w=600',
       processContent: `Canada offers a world-class education experience. Our dedicated consultants will help you navigate the application process, from selecting the right university to preparing comprehensive application documents.`
+    },
+    {
+      name: 'United Kingdom',
+      benefits: [
+        { icon: GraduationCap, text: 'Globally Respected Degrees' },
+        { icon: Globe, text: 'Rich Cultural Heritage' },
+        { icon: BookOpen, text: 'Strong Research Opportunities' }
+      ],
+      image: 'https://images.pexels.com/photos/17152276/pexels-photo-17152276/free-photo-of-view-of-eiffel-tower-from-city-street-in-paris.jpeg?auto=compress&cs=tinysrgb&w=600',
+      processContent: `The UK is home to some of the world's most prestigious universities. Our consultants ensure a smooth application journey, helping you secure a place in top institutions.`
+    },
+    {
+      name: 'Germany',
+      benefits: [
+        { icon: GraduationCap, text: 'Tuition-Free Education' },
+        { icon: Globe, text: 'Strong Engineering & Tech Programs' },
+        { icon: BookOpen, text: 'Global Career Opportunities' }
+      ],
+      image: 'https://images.pexels.com/photos/1707213/pexels-photo-1707213.jpeg?auto=compress&cs=tinysrgb&w=600',
+      processContent: `Germany offers world-class education with many tuition-free programs. Our team will guide you through the visa process, scholarships, and university selection.`
+    },
+    {
+      name: 'Australia',
+      benefits: [
+        { icon: GraduationCap, text: 'High-Quality Education' },
+        { icon: Globe, text: 'Student-Friendly Cities' },
+        { icon: BookOpen, text: 'Strong Job Market for Graduates' }
+      ],
+      image: 'https://images.pexels.com/photos/16715757/pexels-photo-16715757/free-photo-of-tourists-await-ferry-in-venice.jpeg?auto=compress&cs=tinysrgb&w=600',
+      processContent: `Australia is known for its innovative universities and vibrant student life. Let our experts assist you in securing admission and handling visa procedures.`
+    },
+    {
+      name: 'France',
+      benefits: [
+        { icon: GraduationCap, text: 'Affordable & High-Quality Education' },
+        { icon: Globe, text: 'Diverse International Community' },
+        { icon: BookOpen, text: 'Strong Business & Fashion Schools' }
+      ],
+      image: 'https://images.pexels.com/photos/15710310/pexels-photo-15710310/free-photo-of-a-view-of-tall-buildings-in-a-city.jpeg?auto=compress&cs=tinysrgb&w=600',
+      processContent: `France offers excellent education opportunities, especially in business and arts. Our consultants will support you in your journey to top French institutions.`
     },
     {
       name: 'Ireland',
       benefits: [
-        { icon: GraduationCap, text: 'World-Class Education' },
-        { icon: Globe, text: 'Unique Learning Environment' },
-        { icon: BookOpen, text: 'Research-Intensive Programs' }
+        { icon: GraduationCap, text: 'Leading Tech & Science Universities' },
+        { icon: Globe, text: 'Safe & Friendly Environment' },
+        { icon: BookOpen, text: 'Fast-Growing Economy' }
       ],
-      image: 'https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // Use local image
-      processContent: `Discover the rich educational landscape of Ireland. Our consultants provide end-to-end support, ensuring a smooth and successful application journey to Irish universities.`
+      image: 'https://images.pexels.com/photos/672630/pexels-photo-672630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      processContent: `Ireland has a strong reputation in tech and research-driven education. Our team will help you navigate the application and scholarship process.`
+    },
+    {
+      name: 'New Zealand',
+      benefits: [
+        { icon: GraduationCap, text: 'Globally Recognized Degrees' },
+        { icon: Globe, text: 'Great Work-Life Balance' },
+        { icon: BookOpen, text: 'Strong Post-Study Work Options' }
+      ],
+      image: 'https://images.pexels.com/photos/16704326/pexels-photo-16704326/free-photo-of-sunset-in-the-grand-canal-of-venice.jpeg?auto=compress&cs=tinysrgb&w=600',
+      processContent: `New Zealand offers top-quality education with excellent post-study work opportunities. Our consultants will assist you in selecting the best program for your career goals.`
+    },
+    {
+      name: 'Netherlands',
+      benefits: [
+        { icon: GraduationCap, text: 'Renowned Research Institutions' },
+        { icon: Globe, text: 'Highly Innovative Study Programs' },
+        { icon: BookOpen, text: 'Great Scholarships for International Students' }
+      ],
+      image: 'https://images.pexels.com/photos/3225535/pexels-photo-3225535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      processContent: `The Netherlands is known for its research-focused universities and excellent student experience. Our team will guide you in applying for top Dutch programs.`
     }
-  ];
+];
+
 
   const applicationSteps = [
     {
@@ -229,21 +293,38 @@ export default function StudyAbroadPage() {
       icon: FileText
     },
     {
-      title: 'Test Preparation',
-      description: 'Some universities require GMAT, GRE, IELTS, TOEFL, SAT, or PTE tests. Our professional abroad education consultants will help you prepare for these tests using updated resources and training to help you perform at your best.',
+      title: 'Test Preparation & Guidance',
+      description: 'Some universities require GMAT, GRE, IELTS, TOEFL, SAT, or PTE tests. Our professional education consultants will help you prepare for these tests with study materials, mock exams, and personalized strategies to maximize your scores.',
       icon: Calendar
     },
     {
-      title: 'University Application',
-      description: 'Once you\'ve prepared all the required documents and passed any necessary tests, we\'ll help you submit your applications to your chosen universities. We ensure that all applications meet the universities\' criteria, reducing the chances of rejection.',
+      title: 'University Application Assistance',
+      description: 'Once you\'ve prepared all the required documents and passed any necessary tests, we\'ll assist you in submitting your applications to your selected universities, ensuring they meet all criteria for a higher chance of acceptance.',
       icon: GraduationCap
     },
     {
-      title: 'Visa and Travel Arrangements',
-      description: 'Congratulations on your acceptance! Our overseas education consultants will guide you through the visa process and help you with all travel arrangements, ensuring a smooth transition to your new destination.',
+      title: 'Scholarship and Financial Aid Guidance',
+      description: 'We help you explore available scholarships, grants, and financial aid options to reduce the cost of studying abroad. Our consultants will assist you in preparing strong applications for financial support programs.',
+      icon: Currency
+    },
+    {
+      title: 'Visa Application & Interview Training',
+      description: 'Our team will help you prepare and submit your visa application with precision. We also conduct mock visa interviews to ensure you feel confident and well-prepared for the real process.',
+      icon: Book
+    },
+    {
+      title: 'Pre-Departure Orientation',
+      description: 'Before you leave, we provide an orientation session covering cultural adaptation, packing tips, banking, accommodation, and health insurance guidance, ensuring you have a smooth transition to student life abroad.',
+      icon: Globe
+    },
+    {
+      title: 'Travel & Accommodation Assistance',
+      description: 'We assist with travel bookings, airport pickups, and finding suitable accommodation—be it university dorms, homestays, or private rentals—ensuring you feel at home from day one.',
       icon: Plane
     }
   ];
+    
+
 
   return (
     <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 min-h-screen">
@@ -296,7 +377,7 @@ export default function StudyAbroadPage() {
                   objectFit="cover"
                   className="absolute inset-0 z-0"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-50 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-r  opacity-50 z-10"></div>
                 <div className="absolute bottom-0 left-0 right-0  text-white p-4 z-20">
                   <h2 className="text-2xl font-semibold">{destination.name}</h2>
                 </div>
@@ -382,7 +463,7 @@ export default function StudyAbroadPage() {
       </div>
 
       {/* Detailed Study Abroad Process */}
-      <section className="container mx-auto px-4 py-16">
+      {/* <section className="container mx-auto px-4 py-16">
         <h2 className="text-4xl font-bold text-center mb-12 text-indigo-900">
           The Process for Applying to Study Abroad
         </h2>
@@ -412,7 +493,50 @@ export default function StudyAbroadPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+       <section className="container mx-auto px-4 py-16">
+   <h2 className="text-4xl font-bold text-center mb-12 text-indigo-900">
+          The Process for Applying to Study Abroad
+        </h2>
+  
+  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {studyAbroadProcess.map((service, index) => (
+      <div 
+        key={index} 
+        className={`relative overflow-hidden bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg group`}
+      >
+        {/* Animated overlay - Starts invisible and grows on hover */}
+        <div className="absolute inset-0 bg-blue-600 origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-out z-0"></div>
+        
+        {/* Card content */}
+        <div className="relative z-10 p-6 flex flex-col h-full">
+          {/* Icon container */}
+          <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors duration-300 group-hover:bg-white">
+            <service.icon className="text-blue-600 transition-colors duration-300" size={28} />
+          </div>
+          
+          {/* Service name */}
+          <h3 className="text-xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
+            {service.title}
+          </h3>
+          
+          {/* Description */}
+          <p className="text-gray-600 mb-4 flex-grow group-hover:text-white transition-colors duration-300">
+            {service.description}
+          </p>
+          
+          {/* Read more link */}
+          <a href="#" className="inline-flex items-center text-gray-700 font-medium group-hover:text-white transition-colors duration-300">
+            Read More
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
     </div>
   );
 }
